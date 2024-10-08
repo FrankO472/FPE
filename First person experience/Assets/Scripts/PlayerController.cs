@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float gravityLimit;
     public float gravityMultiplier;
     public int jumpCount;
+    public int jumpmax;
     Vector2 inputs;
 
     public CharacterController controller;
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
         Rotation();
         if (controller.isGrounded)
         {
-            jumpCount = 2;
+            jumpCount = jumpmax;
         }
     }
 
