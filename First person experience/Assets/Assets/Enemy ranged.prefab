@@ -130,8 +130,8 @@ GameObject:
   - component: {fileID: 2669140444574822973}
   - component: {fileID: 3320271292510212631}
   - component: {fileID: 5984471876527545968}
-  m_Layer: 0
-  m_Name: Enemy
+  m_Layer: 6
+  m_Name: Enemy ranged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,6 +265,8 @@ MonoBehaviour:
   attackRate: 3
   attackDistance: 15
   health: 0
+  bulletPos: {fileID: 0}
+  bullet: {fileID: 0}
 --- !u!114 &5984471876527545968
 MonoBehaviour:
   m_ObjectHideFlags: 0
