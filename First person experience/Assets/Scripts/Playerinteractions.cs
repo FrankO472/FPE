@@ -48,11 +48,22 @@ public class Playerinteractions : MonoBehaviour
             hand.transform.GetChild(0).gameObject.GetComponent<Rigidbody>().isKinematic = false;
             hand.transform.GetChild(0).gameObject.transform.parent = null;
         }
+
+        else if (hand.transform.childCount == 1 && Input.GetKeyDown(KeyCode.G))
+        {
+            GameObject currentObj;
+            currentObj = hand.transform.GetChild(0).gameObject;
+            currentObj.GetComponent<Rigidbody>().isKinematic = false;
+
+            currentObj.gameObject.GetComponent<Rigidbody>().AddForce(currentObj.transform.up * -10f, ForceMode.Impulse);
+            currentObj.gameObject.transform.parent = null;
+        }
+
         else if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, lookDistance, layerMask))
         {
             if (hand.transform.childCount == 0)
             {
-                gmSc.infoText.text = "Press Left Click To Pick Up";
+                gmSc.infoText.text = "Press Left Click To Pick Up" + hit.collider.gameObject.name;
 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {

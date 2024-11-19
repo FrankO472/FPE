@@ -13,7 +13,7 @@ public class Exit : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerController>().spawnPoint = spawnPoint;
-            StartCoroutine(other.gameObject.GetComponentInParent<PlayerController>().LoadNewScene(levelName));
+            StartCoroutine(other.gameObject.GetComponent<PlayerController>().LoadNewScene(levelName));
         }
     }
 }

@@ -8,11 +8,13 @@ public class PlayerHealth : MonoBehaviour
 {
 
     public float health;
+    public float maxhealth;
     public Slider healthSlider;
     // Start is called before the first frame update
     void Start()
     {
-        healthSlider.maxValue = health;
+        health = maxhealth;
+        healthSlider.maxValue = maxhealth;
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = health;
         if (health <= 0)
         {
+            health = maxhealth;
             GameOver();
         }
     }
